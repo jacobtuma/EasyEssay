@@ -1,5 +1,5 @@
 import React from "react";
-import MelloGreenData from '../shared/data';
+import EssayData from '../shared/data';
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -8,7 +8,7 @@ export default class Main extends React.Component {
     }
 
     componentDidMount() {
-        let api = new MelloGreenData();
+        let api = new EssayData();
         let self = this;
         api.findSpecificTopic('58c1e6d4cf2951873d497e5d').then(data => {
             self.setState({topic: data.data})

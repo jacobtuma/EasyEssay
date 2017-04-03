@@ -1,12 +1,10 @@
 import React from "react";
-import MelloGreenData from '../shared/data';
+import EssayData from '../shared/data';
 
-import SalesThisWeek from "./dashboard-panels/SalesThisWeek";
-import SalesByProduct from "./dashboard-panels/SalesByProduct";
 
 export default class DashboardLayout extends React.Component {
     componentDidMount() {
-        // let api = new MelloGreenData();
+        // let api = new EssayData();
         // let self = this;
         // api.getTopic().then(data => {
         //     self.setState({topic: data.data});
@@ -18,17 +16,24 @@ export default class DashboardLayout extends React.Component {
         return (
             <div>
                 <h2 className="page-header">Account Login</h2>
-                <form method="post" action="/users/login">
-                    <div className="form-group">
-                        <label>Username</label>
-                        <input type="text" className="form-control" name="username" placeholder="Username"/>
-                    </div>
-                    <div className="form-group">
-                        <label>Password</label>
-                        <input type="password" className="form-control" name="password" placeholder="Password"/>
-                    </div>
-                    <button type="submit" className="btn btn-default">Submit</button>
-                </form>
+
+                <Form ref='simpleForm'>
+                    <Field
+                        name='name'
+                        label='Full Name:'
+                        type='text'
+                        validators={[
+                            'required']}
+                    />
+                    <Field
+                        name='username'
+                        label='Username:'
+                        type='text'
+                        validators={[
+                            'required']}
+                    />
+                </Form>
+                <button onClick={this.handleSubmit.bind(this)}>Login</button>
 
             <ol className="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" className="active"></li>

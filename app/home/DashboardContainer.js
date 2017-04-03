@@ -1,6 +1,6 @@
 import React from "react";
 
-import MelloGreenData from '../shared/data';
+import EssayData from '../shared/data';
 import DashboardLayout from "./DashboardLayout";
 
 export default class DashboardContainer extends React.Component {
@@ -10,7 +10,7 @@ export default class DashboardContainer extends React.Component {
     }
 
     componentDidMount() {
-        let api = new MelloGreenData();
+        let api = new EssayData();
         let self = this;
         // api.getDistributors().then(data => {
         //     self.setState({distributors: data.data});

@@ -1,24 +1,9 @@
 import axios from "axios";
-import passport from "passport"
-import LocalStrategy from 'passport-local'
-import querystring from 'querystring';
 
 
-export default class MelloGreenData {
+export default class EssayData {
     constructor(){
 
-    }
-
-    getDistributors() {
-        return axios.get("/api/distributors");
-    }
-
-    getTotalSalesThisWeek(){
-        return axios.get("/api/sales/this-week/total");
-    }
-
-    getTotalSalesThisWeekByProduct(){
-        return axios.get("/api/sales/this-week/by-product");
     }
 
 

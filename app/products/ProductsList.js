@@ -1,6 +1,6 @@
 import React from "react";
 
-import MelloGreenData from '../shared/data';
+import EssayData from '../shared/data';
 import {Form, Field} from 'simple-react-forms';
 
 
@@ -22,7 +22,7 @@ export default class ProductsList extends React.Component {
 
 
     addAccount(name, username, email, password, password2) {
-        let api = new MelloGreenData();
+        let api = new EssayData();
 
         api.registerAccount(name, username, email, password, password2);
 }
