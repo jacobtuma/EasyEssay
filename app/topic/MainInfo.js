@@ -8,7 +8,7 @@ export default class MainInfo extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {topic: [], subcategories: [], Main_Facts: [], count: 0};
+        this.state = {topic: [], subcategories: [], Main_Facts: [], count: 'main', facts: []};
     }
 
 
@@ -20,9 +20,15 @@ export default class MainInfo extends React.Component {
                 subcategories: data.data.SubCategories,
                 Main_Facts: data.data.Main_Facts})
         });
+
     }
 
+    getInitialState() {
+        self.state.subcategories.map(fact => {
+            console.log(fact)
 
+        })
+    }
 
     setCount(num) {
 let self = this
@@ -63,7 +69,7 @@ let self = this
 
                     <hr/>
                 <div className="row">
-                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} subby={this.state.subcategories[this.state.count]} main_facts={this.state.Main_Facts} setCount={(e) => this.setCount(e)}  count={this.state.count} />
+                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} subby={this.state.subcategories[this.state.count]} main_facts={this.state.Main_Facts} setCount={(e) => this.setCount(e)} setFacts={(e) => this.setFacts(e)}  count={this.state.count} />
                 </div>
                 </div>
 

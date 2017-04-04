@@ -13,7 +13,7 @@ export default class Bulletpoint extends React.Component {
         return(
             <div className="row">
                 <div className="col-sm-6">
-                    {this.props.product}
+                    {/*{this.props.subfacts}*/}
                 </div>
                <ul>
                    {this.props.facts.map(fact => {

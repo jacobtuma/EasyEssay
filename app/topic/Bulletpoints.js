@@ -5,7 +5,7 @@ import EssayData from '../shared/data';
 export default class Bulletpoints extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {showMe: 'none', num: '1', categories: [], name: this.categories[1].name}
+            this.state = {showMe: 'none', num: '1', categories: [], facts: [] }
         }
 
     componentDidMount() {
@@ -23,11 +23,15 @@ export default class Bulletpoints extends React.Component {
 list(num) {
 
             var route;
+    let cookie = [];
+    this.props.subcat.map(subcategory =>{
+        cookie.push(subcategory.facts)
+        console.log(cookie)
+    });
             if(num == 'main') {
                route = <Bulletpoint product={this.props.count} facts={this.props.main_facts} subfacts={this.props.subcat}/>
             } else if (num !== 'main') {
-
-                route = <Bulletpoint product={this.props.count} facts={this.props.main_facts} subfacts={this.props.subcat} />
+                route = <Bulletpoint product={this.props.count} facts={cookie[num]} />
             }
 
             return route
@@ -59,9 +63,10 @@ list(num) {
                         <ul id="facts">
 
 
-{console.log(this.state.categories)}
 
-                            {this.list(0)}
+
+                            {this.list(this.props.count)}
+
 
 
 
