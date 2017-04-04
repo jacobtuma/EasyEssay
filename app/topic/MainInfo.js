@@ -8,8 +8,9 @@ export default class MainInfo extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {topic: [], subcategories: [], Main_Facts: []};
+        this.state = {topic: [], subcategories: [], Main_Facts: [], count: 0};
     }
+
 
     componentDidMount() {
         let api = new EssayData();
@@ -19,6 +20,29 @@ export default class MainInfo extends React.Component {
                 subcategories: data.data.SubCategories,
                 Main_Facts: data.data.Main_Facts})
         });
+    }
+
+
+
+    setCount(num) {
+let self = this
+        switch (num) {
+            case 0:
+                self.setState({count: 0});
+                break;
+            case 1:
+                self.setState({count: 1});
+                break;
+            case 2:
+                self.setState({count: 2});
+                break;
+            case 3:
+                self.setState({count: 3});
+                break;
+            case 4:
+                self.setState({count: 4});
+                break;
+        }
     }
 
 
@@ -36,7 +60,7 @@ export default class MainInfo extends React.Component {
 
                     <hr/>
                 <div className="row">
-                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} main_facts={this.state.Main_Facts} count={this.state.count} />
+                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} main_facts={this.state.Main_Facts} setCount={(e) => this.setCount(e)}  count={this.state.count} />
                 </div>
                 </div>
 

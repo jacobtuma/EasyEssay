@@ -13,7 +13,7 @@ export default class DashboardLayout extends React.Component {
         let api = new EssayData();
         let form = this.refs['simpleForm']
         if(form.isValid()) {
-            let username = form.getFormValues().username;
+            let username = form.getFormValues().email;
             let password = form.getFormValues().password;
 
             api.logIn(username, password)
@@ -40,9 +40,9 @@ export default class DashboardLayout extends React.Component {
         <p className="mac-subtext ">You've found the right place to cut hours off your research.</p>
     </div>
     </div>
-<hr/>
-</div>
 
+</div>
+                        <hr/>
                         <div className="col-md-8 header">
                             <div className="row animated fadeInUp ">
                                 <div className="col-md-3">

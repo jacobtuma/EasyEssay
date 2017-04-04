@@ -4,25 +4,26 @@ import Bulletpoint from "./bulletpoint"
 export default class Bulletpoints extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {showMe: 'none', num: '0'}
+            this.state = {showMe: 'none', num: '1', Main_Facts: []}
         }
 
 
-         handleClick(value) {
-            console.log("HERE " + value);
-            this.state.showMe = value;
-            this.changeArticle();
-         }
 
-         changeArticle(){
-             if (this.state.showMe == '0') {
-                 return (<div>worked</div>);
-             } else if (this.state.showMe  == '1'){
-                 return (<div>worked2</div>);
-             } else if (this.state.showMe  == 'none'){
-                 return (<div>nothing yet..</div>);
-             }
-         }
+    componentDidMount() {
+
+
+    }
+
+list(num) {
+            var route;
+            if(num == 'main') {
+               route = <Bulletpoint product={this.props.count} facts={this.props.main_facts}/>
+            } else if (num !== 'main') {
+               route= <Bulletpoint product={this.props.count} facts={this.props.main_facts}/>
+            }
+
+            return route
+}
 
 
     render() {
@@ -36,7 +37,7 @@ export default class Bulletpoints extends React.Component {
                         <a  href="/#/topic" className="return false;" value="none"><h3 className="subcategory" id="main">Main</h3></a>
                         {
                             this.props.subcat.map((subcategory, i) =>{
-                                return <a onClick={() => this.handleClick(i)} value={i}><h3>{subcategory.name}</h3></a>
+                                return <a onClick={() => this.props.setCount(i)} value={i}><h3>{subcategory.name}</h3></a>
                             })
                         }
 
@@ -50,14 +51,15 @@ export default class Bulletpoints extends React.Component {
                         <ul id="facts">
 
 
-                            {this.changeArticle()}
 
-                            {/*{  this.props.main_facts.map(subcategory => {*/}
-                                {/*return <li><h3>{subcategory}</h3></li>;*/}
 
-                            {/*})}*/}
 
-                            {/*{ console.log(this.props.main_facts[2])}*/}
+                            {this.list(1)}
+
+
+
+
+
 
 
 

@@ -5,20 +5,19 @@ export default class Bulletpoint extends React.Component {
         super(props);
     }
 
+
     render() {
-        return (
+        return(
             <div className="row">
-                <h2>Distributor List Item</h2>
                 <div className="col-sm-6">
-
+                    {this.props.product}
                 </div>
-                <div className="col-sm-3">
-
-                </div>
-                <div className="col-sm-1">
-
-                </div>
+               <ul>
+                   {this.props.facts.map(fact => {
+                       return <li>{fact}</li>;
+                   })}
+               </ul>
             </div>
-        );
+        )
     }
 }

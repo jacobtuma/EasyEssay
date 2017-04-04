@@ -25,7 +25,7 @@ export default class EssayData {
 
 
         logIn(){
-            axios.post('api/users/login');
+            axios.post('api/users/login/');
         }
 
 
