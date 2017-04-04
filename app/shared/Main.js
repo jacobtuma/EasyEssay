@@ -39,7 +39,7 @@ export default class Main extends React.Component {
                         <ul className="nav navbar-nav">
                             <li className={this.props.location.pathname === "/" ? "active": ""}><a href="#/">Dashboard</a></li>
                             <li className={this.props.location.pathname === "/products" ? "active": ""}><a href="#/products">Products</a></li>
-                            <li className={this.props.location.pathname === "/distributors" ? "active": ""}><a href="#/distributors">Distributors</a></li>
+                            <li className={this.props.location.pathname === "/topic" ? "active": ""}><a href="#/topic">Topic</a></li>
                             <li className={this.props.location.pathname === "/sales" ? "active": ""}><a href="#/sales">Cookie</a></li>
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span className="caret"></span></a>
@@ -63,6 +63,12 @@ export default class Main extends React.Component {
             </nav>
 
             <div className="container">{this.props.children}</div>
+
+            <div className="col-md-3 sidebar" data-spy="affix" data-offset-top="65">
+                <img src="../img/man_icon1.png" alt=""/>
+                <hr/>
+            </div>
+
         </div>);
     }
 }

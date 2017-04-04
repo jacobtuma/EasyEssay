@@ -10,12 +10,13 @@ export default class DashboardLayout extends React.Component {
     }
 
     handleSubmit(){
+        let api = new EssayData();
         let form = this.refs['simpleForm']
         if(form.isValid()) {
-            let name = form.getFormValues().username;
-            let username = form.getFormValues().password;
+            let username = form.getFormValues().username;
+            let password = form.getFormValues().password;
 
-            this.addAccount(username, password)
+            api.logIn(username, password)
         }
 
     }
@@ -26,18 +27,37 @@ export default class DashboardLayout extends React.Component {
             <div>
 
 
-                <div className="container-fluid">
-                    <div className="row">
-<div className="header" >
 
-            <h2 id="macbook-title" className="mac-subtext animated fadeInUp">Build your Strategy.</h2>
-        <p className="mac-subtext animated fadeInUp ">Simple & Reliable Information for any project</p>
-        <a className="ghost-button" href="/#/topic">Get Started!</a>
+                    <div className="row no-gutter">
 
-                    </div>
+<div className="col-md-8 header">
+    <div className="row animated fadeInUp ">
+        <div className="col-md-3">
+            <img className="img-responsive round-img" src="../img/book_icon.png" alt=""/>
+        </div>
+    <div className="col-md-8">
+            <h2 id="macbook-title" className="mac-subtext">Essays Simplified</h2>
+        <p className="mac-subtext ">You've found the right place to cut hours off your research.</p>
+    </div>
+    </div>
+<hr/>
+</div>
 
-            </div>
+                        <div className="col-md-8 header">
+                            <div className="row animated fadeInUp ">
+                                <div className="col-md-3">
+                                    <img className="img-responsive round-img" src="../img/student_icon.png" alt=""/>
+                                </div>
+                                <div className="col-md-9">
+                                    <h2 id="macbook-title" className="mac-subtext animated fadeInUp">Look Legitimate</h2>
+                                    <p className="mac-subtext animated fadeInUp ">Don't trust a Wiki? We have your source cited for reference immediately.</p>
+                                </div>
 
+                            </div>
+                            <br/>
+                        </div>
+
+</div>
 
 
 
@@ -60,7 +80,6 @@ export default class DashboardLayout extends React.Component {
                         />
                     </Form>
                     <button onClick={this.handleSubmit.bind(this)}>Login</button>
-                </div>
                 </div>
 
 

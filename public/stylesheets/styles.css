@@ -47,11 +47,15 @@ a:hover {
 }
 
 .header {
-	margin-top: 1px;
-	height: 80vh;
-	width: 100%;
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/macbook.jpg') no-repeat fixed center;
-	background-size: 80%;
+
+}
+
+.row.no-gutter {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 0;
+	padding-right:0;
+	width: 100%
 }
 
 .carousel-inner {
@@ -67,24 +71,29 @@ a:hover {
 
 #macbook-title {
 	z-index: 999;
-	position: absolute;
    /*color: #0071BC;*/
-   color:white;
-	text-align: center;
+   color:gray;
 	font-family: 'Poppins', sans-serif;
 	font-weight: normal;
-	font-size: 95px;
+	font-size: 50px;
 }
 
 .mac-subtext {
-position: absolute;
-		color: white;
+		color:darkgray;
 		/*color: #0071BC;*/
-		font-size: 40px;
+		font-size: 28px;
 		opacity: 1;
 		z-index: 99;
-;
 }
+
+
+.round-img {
+	width: 80%;
+ }
+
+
+
+
 .features {
 	width: 100%;
 		display: flex;
@@ -107,20 +116,19 @@ position: absolute;
 .ghost-button {
   display: inline-block;
   width: 200px;
-  padding: 8px;
   color: #fff;
-  border: 2px solid #fff;
+  border: 1px solid #fff;
   text-align: center;
   outline: none;
   text-decoration: none;
-  position: absolute;
+	font-family: 'Poppins', sans-serif;
   z-index: 99;
   font-size: 32px;
   text-align: center;
   top: 50%;
 right: 43%;
   justify-content: center;
-  transition: 2s;
+  transition: .3s;
 }
 
 .ghost-button:hover,
@@ -197,14 +205,14 @@ font-family: 'Muli';
 
 
 .sidebar {
-	width: 300px;
 	height: 30vh;
 	background-color: #ebebeb;
 	z-index: 99;
 	position: fixed;
 	top: 13.25vh;
+	border: 2px solid gray;
 	right: 0;
-	margin-right: 6.5%;
+	margin-right: 3.5%;
 	text-align: center;
 	transition: .3s;
 	  box-shadow: 1px 2px 1px #888888;
@@ -268,6 +276,9 @@ margin: 7px 1px;
 	color: darkred;
 }
 
-
+.header hr {
+	margin: 22px 204px;
+	border: 1px;
+}
 
 
