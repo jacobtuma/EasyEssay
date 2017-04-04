@@ -4,7 +4,10 @@ export default class Bulletpoint extends React.Component {
     constructor(props) {
         super(props);
     }
+    componentDidMount() {
 
+
+    }
 
     render() {
         return(

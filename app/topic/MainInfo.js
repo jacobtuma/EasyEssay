@@ -27,6 +27,9 @@ export default class MainInfo extends React.Component {
     setCount(num) {
 let self = this
         switch (num) {
+            case 'main':
+                self.setState({count: 'main'});
+                break;
             case 0:
                 self.setState({count: 0});
                 break;
@@ -60,7 +63,7 @@ let self = this
 
                     <hr/>
                 <div className="row">
-                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} main_facts={this.state.Main_Facts} setCount={(e) => this.setCount(e)}  count={this.state.count} />
+                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} subby={this.state.subcategories[this.state.count]} main_facts={this.state.Main_Facts} setCount={(e) => this.setCount(e)}  count={this.state.count} />
                 </div>
                 </div>
 

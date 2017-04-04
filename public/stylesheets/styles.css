@@ -40,11 +40,12 @@ a:hover {
 .logo {
 	position: relative;
 	z-index: 6;
-	height: 8vh;
-	top: 0;
-	margin-top: 2px;
+	height: 51px;
+	top: -14px;
 
 }
+
+
 
 .header {
 
