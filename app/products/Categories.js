@@ -4,10 +4,9 @@ import EssayData from '../shared/data';
 import {Form, Field} from 'simple-react-forms';
 
 
-export default class ProductsList extends React.Component {
+export default class Categories extends React.Component {
     componentDidMount() {
 
-        let self = this;
 
     }
 
@@ -60,6 +59,68 @@ export default class ProductsList extends React.Component {
     render(){
         return (
 <div>
+
+
+        <div className="row animated fadeInUp ">
+            <div className="col-md-8 header">
+            <div className="col-md-3">
+                <img className="img-responsive round-img" src="../img/globe_icon.png" alt=""/>
+            </div>
+            <div className="col-md-9">
+                <h2 id="macbook-title" className="mac-subtext animated fadeInUp">World Issues</h2>
+                <ul>
+                    <a href="/#/topic/58bf0e632bcc28a8c2b5109b"><li>Global Warming</li> </a>
+                    <a href="/#/topic/58c1e6d4cf2951873d497e5d"><li>World Hunger</li></a>
+                </ul>
+            </div>
+        </div>
+        <br/>
+    </div>
+    <hr/>
+        <div className="row animated fadeInUp ">
+            <div className="col-md-8 header">
+            <div className="col-md-3">
+                <img className="img-responsive round-img" src="../img/ufo_icon.png" alt=""/>
+            </div>
+            <div className="col-md-9">
+                <h2 id="macbook-title" className="mac-subtext animated fadeInUp">Alien Evidence</h2>
+
+            </div>
+
+        </div>
+    </div>
+    <hr/>
+    <div className="row animated fadeInUp ">
+        <div className="col-md-8 header">
+            <div className="col-md-3">
+                <img className="img-responsive round-img" src="../img/pencil_icon.png" alt=""/>
+            </div>
+            <div className="col-md-9">
+                <a href=""><h2 id="macbook-title" className="mac-subtext animated fadeInUp">Classic Topics</h2></a>
+                <ul>
+                    <li>Should students be allowed to grade their teachers?</li>
+                    <li>Are actors and professional athletes paid too much?</li>
+                    <li> Should teachers have to wear uniforms or have a dress code?</li>
+                </ul>
+            </div>
+        </div>
+        <br/>
+    </div>
+    <hr/>
+    <div className="row animated fadeInUp ">
+        <div className="col-md-8 header">
+            <div className="col-md-3">
+                <img className="img-responsive round-img" src="../img/backpack_icon.png" alt=""/>
+            </div>
+            <div className="col-md-9">
+                <h2 id="macbook-title" className="mac-subtext animated fadeInUp">Travel</h2>
+            </div>
+
+        </div>
+    </div>
+
+
+
     <h2 className="page-header">Register</h2>
 
          <Form ref='simpleForm'>

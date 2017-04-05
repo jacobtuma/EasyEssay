@@ -15,13 +15,23 @@ export default class Main extends React.Component {
         });
     }
 
-    handleClick(id){
-        event.preventDefault();
-// this.setState({id: id})
+
+
+    HiItems(items) {
+        console.log(items)
     }
 
-    render(){
+    render () {
+        let items = [
+            { id: 0, value: 'ruby' },
+            { id: 1, value: 'javascript' },
+            { id: 2, value: 'lua' },
+            { id: 3, value: 'go' },
+            { id: 4, value: 'julia' }
+        ];
+
         return (<div>
+
             <nav className="navbar">
                 <div className="container-fluid">
                     <div className="navbar-header">
@@ -37,9 +47,7 @@ export default class Main extends React.Component {
 
                     <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul className="nav navbar-nav">
-                            <li className={this.props.location.pathname === "/" ? "active": ""}><a href="#/">Dashboard</a></li>
-                            <li className={this.props.location.pathname === "/products" ? "active": ""}><a href="#/products">Products</a></li>
-                            <li className={this.props.location.pathname === "/topic" ? "active": ""}><a href="#/topic">Topic</a></li>
+                            <li className={this.props.location.pathname === "/products" ? "active": ""}><a href="#/categories">Categories</a></li>
                             <li className={this.props.location.pathname === "/sales" ? "active": ""}><a href="#/sales">Cookie</a></li>
                             <li className="dropdown">
                                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span className="caret"></span></a>
@@ -56,7 +64,7 @@ export default class Main extends React.Component {
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
-
+                            <li>  </li>
                         </ul>
                     </div>
                 </div>

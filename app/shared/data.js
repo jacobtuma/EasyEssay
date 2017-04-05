@@ -6,7 +6,6 @@ export default class EssayData {
 
     }
 
-
      listTopics() {
         return axios.get("api/topics")
 }
@@ -31,9 +30,12 @@ export default class EssayData {
 
 
     findSpecificTopic(idNum) {
-        return axios.get("api/topics/" + idNum );
+        return axios.get("api/topics/topic/" + idNum );
     }
 
+    findCategory(category){
+        return axios.get("api/topics/category/" + category );
+    }
 
 
 

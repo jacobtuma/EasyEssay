@@ -56,6 +56,20 @@ export default class DashboardLayout extends React.Component {
                             </div>
                             <br/>
                         </div>
+                        <hr/>
+                        <div className="col-md-8 header">
+                            <div className="row animated fadeInUp ">
+                                <div className="col-md-3">
+                                    <img className="img-responsive round-img" src="../img/paper_icon.png" alt=""/>
+                                </div>
+                                <div className="col-md-9">
+                                    <h2 id="macbook-title" className="mac-subtext animated fadeInUp">Putting Two Together</h2>
+                                    <p className="mac-subtext animated fadeInUp ">Spending less time researching means you can put more time into creating a brilliant essay </p>
+                                </div>
+
+                            </div>
+                            <br/>
+                        </div>
 
 </div>
 

@@ -18,38 +18,46 @@ export default class Bulletpoints extends React.Component {
 
     }
 
+    handleClick(){
+
+    }
 
 
-list(num) {
 
-            var route;
-    let cookie = [];
+list(idNum) {
+
+            let route;
+    let factsList = [];
+    let titleList = []
     this.props.subcat.map(subcategory =>{
-        cookie.push(subcategory.facts)
-        console.log(cookie)
+        factsList.push(subcategory.facts)
+        titleList.push(subcategory.name)
     });
-            if(num == 'main') {
-               route = <Bulletpoint product={this.props.count} facts={this.props.main_facts} subfacts={this.props.subcat}/>
-            } else if (num !== 'main') {
-                route = <Bulletpoint product={this.props.count} facts={cookie[num]} />
+            if(idNum == 'main') {
+               route = <Bulletpoint product={this.props.count} facts={this.props.main_facts} name="Main Facts"/>
+            } else if (idNum !== 'main') {
+                route = <Bulletpoint product={this.props.count} facts={factsList[idNum]} name={titleList[idNum]} />
             }
 
             return route
 }
 
 
+
+
+
     render() {
         return (
             <div className="mid-section">
-                <div className="left">
-                    <h2>Left</h2>
+                <div className="SubCategories">
+                    <h2>SubCategories</h2>
                     <hr/>
                     <div id="sub-links">
 
                         <a  href="/#/topic" className="return false;" onClick={() => this.props.setCount('main')}><h3 className="subcategory" id="main">Main</h3></a>
                         {
                             this.props.subcat.map((subcategory, i) =>{
-                                return <a onClick={() => this.props.setCount(i)} value={i}><h3>{subcategory.name}</h3></a>
+                                return <a className="subcategory"  onClick={() => this.props.setCount(i)} value={i}><h3>{subcategory.name}</h3></a>
                             })
                         }
 
@@ -59,8 +67,7 @@ list(num) {
                 <div className="right">
 
                     <div className="bulletpoints">
-                        <h2>The Facts:</h2>
-                        <ul id="facts">
+                        <h2></h2>
 
 
 
@@ -75,7 +82,7 @@ list(num) {
 
 
 
-                        </ul>
+
                     </div>
                 </div>
 

@@ -4,7 +4,7 @@ import Main from "../shared/Main";
 
 import DashboardContainer from "../home/DashboardContainer";
 import MainInfo from "../topic/MainInfo";
-import ProductsList from "../products/ProductsList";
+import Categories from "../products/Categories";
 
 
 const routeJsx = (
@@ -13,8 +13,8 @@ const routeJsx = (
     <Router history={hashHistory}>
         <Route path="/" component={Main}>
             <Route path="dashboard" component={DashboardContainer} />
-            <Route path="topic" component={MainInfo} />
-            <Route path="products" component={ProductsList} />
+            <Route path="topic/:id" component={MainInfo} />
+            <Route path="categories" component={Categories} />
             <IndexRoute component={DashboardContainer} />
         </Route>
     </Router>

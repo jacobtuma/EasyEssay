@@ -8,17 +8,20 @@ export default class MainInfo extends React.Component {
 
     constructor(props){
         super(props);
-        this.state = {topic: [], subcategories: [], Main_Facts: [], count: 'main', facts: []};
+        this.state = {topic: [], subcategories: [], Main_Facts: [], count: 'main', facts: [], image: null};
+
     }
 
 
     componentDidMount() {
         let api = new EssayData();
         let self = this;
-        api.findSpecificTopic('58c1e6d4cf2951873d497e5d').then(data => {
+        let path = this.props.location.pathname.split("/topic/").pop();
+        api.findSpecificTopic(path).then(data => {
             self.setState({topic: data.data,
                 subcategories: data.data.SubCategories,
-                Main_Facts: data.data.Main_Facts})
+                Main_Facts: data.data.Main_Facts,
+            image: data.data.Image})
         });
 
     }
@@ -31,7 +34,9 @@ export default class MainInfo extends React.Component {
     }
 
     setCount(num) {
-let self = this
+        $('#bulletpoint').toggleClass('fadeInUp2');
+
+let self = this;
         switch (num) {
             case 'main':
                 self.setState({count: 'main'});
@@ -64,7 +69,7 @@ let self = this
                 <div className="content-backdrop col-md-8">
 
 <div className="row">
-                       <TopDetails topic={this.state.topic}/>
+                       <TopDetails topic={this.state.topic} image={this.state.image}/>
 </div>
 
                     <hr/>

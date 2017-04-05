@@ -15,6 +15,12 @@ function findSpecificTopic(req, res){
     });
 }
 
+function findCategory(req, res){
+    Topic.find({Category: req.params.category}).then(data => {
+        res.json(data);
+    });
+}
+
 function listTopics(req, res){
     Topic.list().then(data => {
         res.json(data);
@@ -22,6 +28,7 @@ function listTopics(req, res){
 }
 
 router.route("/").get(listTopics);
-router.route("/:id").get(findSpecificTopic);
+router.route("/topic/:id").get(findSpecificTopic);
+router.route("/category/:category").get(findCategory);
 
 export default router;

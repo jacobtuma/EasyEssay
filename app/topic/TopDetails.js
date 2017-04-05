@@ -8,7 +8,7 @@ export default class TopDetails extends React.Component {
                 <div className="row details ">
                     <div className="col-md-3">
                     <img className="top-img"
-                         src="img/globe_icon.png"
+                         src={this.props.image}
                          alt=""/>
                 </div>
                     <div className="col-md-9 info-right">
