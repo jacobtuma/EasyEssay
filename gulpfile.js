@@ -1,11 +1,11 @@
 var gulp = require('gulp'),
-    gutil = require('gulp-util')
+    gutil = require('gulp-util');
 
 // HTML
 gulp.task('html', function() {
     return gulp.src('src/index.html')
         .pipe(gulp.dest('build'))
-})
+});
 
 // Scripts
 gulp.task('scripts', function() {
@@ -29,13 +29,13 @@ gulp.task('scripts', function() {
         })
         .pipe(rename('client.js'))
         .pipe(gulp.dest('build'))
-})
+});
 
 // Styles
 gulp.task('styles', function() {
     var stylus = require('gulp-stylus'),
         normalize = require('normalize'),
-        rename = require('gulp-rename')
+        rename = require('gulp-rename');
 
     return gulp.src('src/styles/index.styl')
         .pipe(stylus({
@@ -43,11 +43,11 @@ gulp.task('styles', function() {
         }))
         .pipe(rename('client.css'))
         .pipe(gulp.dest('build'))
-})
+});
 
 // Vendor scripts
 gulp.task('vendor', function() {
-    var concat = require('gulp-concat')
+    var concat = require('gulp-concat');
 
     gulp.src([
         'bower_components/react/react-with-addons.js',
@@ -57,7 +57,7 @@ gulp.task('vendor', function() {
     ])
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest('build'))
-})
+});
 
 // Webserver w/LiveReload
 gulp.task('serve', ['default', 'watch'], function() {
@@ -65,9 +65,9 @@ gulp.task('serve', ['default', 'watch'], function() {
         api = require('./api'),
         livereload = require('gulp-livereload'),
         watch = require('gulp-watch'),
-        open = require('open')
+        open = require('open');
 
-    var port = process.env.port || 3000
+    var port = process.env.port || 3000;
 
     express()
         .use(api)
@@ -77,21 +77,21 @@ gulp.task('serve', ['default', 'watch'], function() {
         })
         .listen(port, function() {
             open('http://localhost:' + port)
-        })
+        });
 
     gulp.src('build/**')
         .pipe(watch({
             name: 'build'
         }))
         .pipe(livereload())
-})
+});
 
 // Watch
 gulp.task('watch', function() {
-    gulp.watch('src/index.html', ['html'])
-    gulp.watch('src/scripts/**', ['scripts'])
-    gulp.watch('src/styles/**', ['styles'])
+    gulp.watch('src/index.html', ['html']);
+    gulp.watch('src/scripts/**', ['scripts']);
+    gulp.watch('src/styles/**', ['styles']);
     gulp.watch('bower_components/**', ['vendor'])
-})
+});
 
-gulp.task('default', ['html', 'scripts', 'styles', 'vendor'])
+gulp.task('default', ['html', 'scripts', 'styles', 'vendor']);

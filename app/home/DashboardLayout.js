@@ -11,7 +11,7 @@ export default class DashboardLayout extends React.Component {
 
     handleSubmit(){
         let api = new EssayData();
-        let form = this.refs['simpleForm']
+        let form = this.refs['simpleForm'];
         if(form.isValid()) {
             let username = form.getFormValues().email;
             let password = form.getFormValues().password;

@@ -21,13 +21,17 @@ a, a:hover, a:active, a:visited, a:focus {
 	text-decoration: none;
 }
 
-a {
+a, a:active {
 	color: #4c5e82;
 	transition: .3s;
 }
+
 a:hover {
 	color:#5076b8;
+	cursor: pointer;
+
 }
+
 
 
 .nav-wrapper {

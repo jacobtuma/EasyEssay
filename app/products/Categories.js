@@ -29,7 +29,7 @@ export default class Categories extends React.Component {
 
 
         handleSubmit(){
-            let form = this.refs['simpleForm']
+            let form = this.refs['simpleForm'];
             if(form.isValid()) {
                 let name = form.getFormValues().name;
                 let username = form.getFormValues().username;

@@ -28,15 +28,24 @@ list(idNum) {
 
             let route;
     let factsList = [];
-    let titleList = []
+    let titleList = [];
     this.props.subcat.map(subcategory =>{
-        factsList.push(subcategory.facts)
+        factsList.push(subcategory.facts);
         titleList.push(subcategory.name)
     });
             if(idNum == 'main') {
-               route = <Bulletpoint product={this.props.count} facts={this.props.main_facts} name="Main Facts"/>
+
+               route = <Bulletpoint
+                   product={this.props.count}
+                   facts={this.props.main_facts}
+                   name="Main Facts"/>
+
             } else if (idNum !== 'main') {
-                route = <Bulletpoint product={this.props.count} facts={factsList[idNum]} name={titleList[idNum]} />
+
+                route = <Bulletpoint
+                    product={this.props.count}
+                    facts={factsList[idNum]}
+                    name={titleList[idNum]} />
             }
 
             return route
@@ -49,12 +58,12 @@ list(idNum) {
     render() {
         return (
             <div className="mid-section">
-                <div className="SubCategories">
+                <div className="SubCategories col-md-5">
                     <h2>SubCategories</h2>
                     <hr/>
                     <div id="sub-links">
 
-                        <a  href="/#/topic" className="return false;" onClick={() => this.props.setCount('main')}><h3 className="subcategory" id="main">Main</h3></a>
+                        <a className="return false;" onClick={() => this.props.setCount('main')}><h3 className="subcategory" id="main">Main</h3></a>
                         {
                             this.props.subcat.map((subcategory, i) =>{
                                 return <a className="subcategory"  onClick={() => this.props.setCount(i)} value={i}><h3>{subcategory.name}</h3></a>
@@ -64,24 +73,11 @@ list(idNum) {
 
                     </div>
                 </div>
-                <div className="right">
+                <div className="right col-md-7">
 
                     <div className="bulletpoints">
-                        <h2></h2>
 
-
-
-
-                            {this.list(this.props.count)}
-
-
-
-
-
-
-
-
-
+                        {this.list(this.props.count)}
 
                     </div>
                 </div>

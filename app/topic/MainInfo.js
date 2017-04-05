@@ -26,12 +26,6 @@ export default class MainInfo extends React.Component {
 
     }
 
-    getInitialState() {
-        self.state.subcategories.map(fact => {
-            console.log(fact)
-
-        })
-    }
 
     setCount(num) {
         $('#bulletpoint').toggleClass('fadeInUp2');
@@ -74,17 +68,14 @@ let self = this;
 
                     <hr/>
                 <div className="row">
-                    <Bulletpoints topic={this.state.topic} subcat={this.state.subcategories} subby={this.state.subcategories[this.state.count]} main_facts={this.state.Main_Facts} setCount={(e) => this.setCount(e)} setFacts={(e) => this.setFacts(e)}  count={this.state.count} />
+                    <Bulletpoints
+                        topic={this.state.topic}
+                        subcat={this.state.subcategories}
+                        main_facts={this.state.Main_Facts}
+                        setCount={(e) => this.setCount(e)} setFacts={(e) => this.setFacts(e)}
+                        count={this.state.count} />
                 </div>
                 </div>
-
-                {/*<div className="sidebar" data-spy="affix" data-offset-top="65">*/}
-                    {/*<h2>Sub-Categories</h2>*/}
-                    {/*<hr/>*/}
-
-
-                {/*</div>*/}
-
             </div>
 
         )

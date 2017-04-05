@@ -16,7 +16,6 @@ export default class TopDetails extends React.Component {
                         <h3>{this.props.topic.Category} </h3>
                         <hr/>
                         <p className="description">{this.props.topic.Description}</p>
-                        <br/><br/><br/><br/>
                     </div>
                 </div>
 

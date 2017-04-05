@@ -15,7 +15,7 @@ export default class DatabaseSeeder {
                 //database already seeded.
                 return;
             }
-            console.log("Seeding database.")
+            console.log("Seeding database.");
             self.seed();
         });
     }

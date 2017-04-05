@@ -100,12 +100,12 @@ passport.deserializeUser(function(id, done) {
 
 var isValidPassword = function(user, password){
     return bCrypt.compareSync(password, user.password);
-}
+};
 
 // Generates hash using bCrypt
 var createHash = function(password){
     return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-}
+};
 
 // Exporting our configured passport.js
 module.exports = passport;

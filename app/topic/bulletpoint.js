@@ -10,7 +10,7 @@ export default class Bulletpoint extends React.Component {
         return(
             <div id="bulletpoint" className="row animated fadeInUp">
                 <h2>{this.props.name}</h2>
-               <ul >
+               <ul>
                    {this.props.facts.map(fact => {
                        return <li>{fact}</li>;
                    })}
